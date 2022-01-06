@@ -1,11 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import GoogleLogin, {
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
 } from 'react-google-login';
 import styles from '../styles/Home.module.css';
-import FacebookLogin from 'react-facebook-login';
 import axios from 'axios';
 
 const Home: NextPage = () => {
@@ -30,15 +27,6 @@ const Home: NextPage = () => {
         onSuccess={onSuccess}
         // onFailure={responseGoogle}
         cookiePolicy={'single_host_origin'}
-      />
-      <FacebookLogin
-        appId='601343690966802'
-        autoLoad={true}
-        fields='name,email,picture'
-        // onClick={componentClicked}
-        callback={(val: any) => {
-          console.log('facebook response', val);
-        }}
       />
     </div>
   );
